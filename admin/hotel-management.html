@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الفنادق والإقامة - نظام الحج</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-100">
+    <button id="sidebar-toggle" class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-white shadow-sm sm:hidden">
+        <i class="fas fa-bars text-gray-600"></i>
+    </button>
+    <aside id="sidebar" class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform bg-white border-l border-gray-200 sm:translate-x-0 translate-x-full sm:translate-x-0">
+        <div class="h-full px-3 py-4 overflow-y-auto">
+            <div class="mb-8 px-2">
+                <div class="flex items-center mb-4">
+                    <img src="../images/logo.png" alt="نظام الحج" class="h-[50px] w-[50px] ml-2">
+                    <div>
+                        <span class="text-xl font-bold text-green-600 block">مدير النظام</span>
+                        <span class="text-sm text-gray-500">لوحة التحكم الرئيسية</span>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="space-y-2">
+                <li>
+                    <a href="super-admin-dashboard.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-chart-pie w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">لوحة التحكم</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user-management.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-users-cog w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">إدارة المستخدمين</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="hotel-management.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-hotel w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">إدارة الفنادق والإقامة</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../integrations/sms-gateway.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-cog w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الإعدادات</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    
+    <main class="p-4 sm:mr-64">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold mb-2">إدارة الفنادق والإقامة</h1>
+            <p class="text-gray-600">إدارة وتنظيم الفنادق وأماكن إقامة الحجاج</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-hotel text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">إجمالي الفنادق</p>
+                        <h3 class="text-xl font-bold">45</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <i class="fas fa-bed text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">الغرف المتاحة</p>
+                        <h3 class="text-xl font-bold">1,234</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">السعة الحالية</p>
+                        <h3 class="text-xl font-bold">85%</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                        <i class="fas fa-building text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">المناطق السكنية</p>
+                        <h3 class="text-xl font-bold">12</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel Management Tools -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Add New Hotel Form -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-bold mb-6">إضافة فندق جديد</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">اسم الفندق</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">المنطقة</label>
+                        <select class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option>مكة المكرمة</option>
+                            <option>المدينة المنورة</option>
+                            <option>جدة</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">العنوان التفصيلي</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">عدد الغرف</label>
+                        <input type="number" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">السعة الإجمالية</label>
+                        <input type="number" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">التصنيف</label>
+                        <select class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option>5 نجوم</option>
+                            <option>4 نجوم</option>
+                            <option>3 نجوم</option>
+                            <option>سكن مؤقت</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                        إضافة الفندق
+                    </button>
+                </form>
+            </div>
+
+            <!-- Hotel List -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold">قائمة الفنادق</h2>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="بحث..." class="border rounded-lg px-3 py-1">
+                        <select class="border rounded-lg px-3 py-1">
+                            <option>جميع المناطق</option>
+                            <option>مكة المكرمة</option>
+                            <option>المدينة المنورة</option>
+                            <option>جدة</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-right">اسم الفندق</th>
+                                <th class="px-4 py-2 text-right">المنطقة</th>
+                                <th class="px-4 py-2 text-right">السعة</th>
+                                <th class="px-4 py-2 text-right">التصنيف</th>
+                                <th class="px-4 py-2 text-right">الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">فندق دار التوحيد</td>
+                                <td class="px-4 py-2">مكة المكرمة</td>
+                                <td class="px-4 py-2">85%</td>
+                                <td class="px-4 py-2">5 نجوم</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-800">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">فندق أنوار المدينة موڤنبيك</td>
+                                <td class="px-4 py-2">المدينة المنورة</td>
+                                <td class="px-4 py-2">72%</td>
+                                <td class="px-4 py-2">5 نجوم</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-800">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">فندق برج الساعة فيرمونت</td>
+                                <td class="px-4 py-2">مكة المكرمة</td>
+                                <td class="px-4 py-2">95%</td>
+                                <td class="px-4 py-2">5 نجوم</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-800">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">فندق المروة ريحان روتانا</td>
+                                <td class="px-4 py-2">مكة المكرمة</td>
+                                <td class="px-4 py-2">68%</td>
+                                <td class="px-4 py-2">4 نجوم</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-800">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">فندق لو مريديان</td>
+                                <td class="px-4 py-2">المدينة المنورة</td>
+                                <td class="px-4 py-2">78%</td>
+                                <td class="px-4 py-2">5 نجوم</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-800">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <nav class="flex gap-2">
+                        <button class="px-3 py-1 border rounded-lg hover:bg-gray-50">السابق</button>
+                        <button class="px-3 py-1 border rounded-lg bg-green-600 text-white">1</button>
+                        <button class="px-3 py-1 border rounded-lg hover:bg-gray-50">2</button>
+                        <button class="px-3 py-1 border rounded-lg hover:bg-gray-50">3</button>
+                        <button class="px-3 py-1 border rounded-lg hover:bg-gray-50">التالي</button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 left-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+        تم حفظ التغييرات بنجاح!
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استقبال الحجاج - نظام الحج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-100">
+    <main class="p-4 sm:mr-64">
+        <!-- Reception Form -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">تسجيل استقبال الحجاج</h2>
+            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Bus Information -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم الحافلة</label>
+                    <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم الرحلة</label>
+                    <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">عدد الحجاج</label>
+                    <input type="number" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <!-- Driver Information -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">اسم السائق</label>
+                    <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم هاتف السائق</label>
+                    <input type="tel" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم المكب</label>
+                    <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <!-- Route Information -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">المسار</label>
+                    <select required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                        <option value="jeddah-madinah">جدة - مدينة</option>
+                        <option value="jeddah-makkah">جدة - مكة</option>
+                        <option value="madinah-makkah">مدينة - مكة</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">حالة الرحلة</label>
+                    <select required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                        <option value="not-arrived">لم تصل بعد</option>
+                        <option value="arrived">تم الوصول</option>
+                        <option value="processing">تحت الإجراء</option>
+                        <option value="departed">تمت المغادرة</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">الجنسية</label>
+                    <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <!-- Time Information -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">وقت الترحيل</label>
+                    <input type="time" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">الوقت المتوقع للوصول</label>
+                    <input type="time" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <!-- Address spans full width -->
+                <div class="md:col-span-2 lg:col-span-3">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">عنوان السكن</label>
+                    <textarea required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500" rows="2"></textarea>
+                </div>
+
+                <!-- Notes span full width -->
+                <div class="md:col-span-2 lg:col-span-3">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">ملاحظات</label>
+                    <textarea class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500" rows="2"></textarea>
+                </div>
+
+                <!-- Add new fields for enhanced reception tracking -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Flight Information -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">رقم الرحلة الجوية</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    
+                    <!-- Expected Arrival Time -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">وقت الوصول المتوقع</label>
+                        <input type="datetime-local" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    
+                    <!-- Nationality Groups -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">مجموعات الجنسيات</label>
+                        <select multiple class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-500">
+                            <option value="EGY">مصر</option>
+                            <option value="PAK">باكستان</option>
+                            <option value="IDN">إندونيسيا</option>
+                            <!-- Add more nationalities -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="md:col-span-2 lg:col-span-3">
+                    <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                        <i class="fas fa-save ml-2"></i>
+                        حفظ المعلومات
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 left-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+        تم حفظ المعلومات بنجاح
+    </div>
+</body>
+</html> 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Services Integration - نظام الحج</title>
+    <!-- ... standard head includes ... -->
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+</head>
+<body class="bg-gray-100">
+    <main class="p-4 sm:mr-64">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold mb-6">خدمات الخرائط</h2>
+            
+            <!-- Map Provider Settings -->
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">مزود خدمة الخرائط</label>
+                    <select class="w-full border rounded-lg px-3 py-2">
+                        <option value="google">Google Maps</option>
+                        <option value="mapbox">Mapbox</option>
+                        <option value="here">HERE Maps</option>
+                    </select>
+                </div>
+
+                <!-- API Configuration -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">API Key</label>
+                    <input type="password" class="w-full border rounded-lg px-3 py-2">
+                </div>
+
+                <!-- Default Map Center -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">خط العرض الافتراضي</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="21.4225">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">خط الطول الافتراضي</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="39.8262">
+                    </div>
+                </div>
+
+                <!-- Map Preview -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">معاينة الخريطة</label>
+                    <div id="map" class="w-full h-96 rounded-lg border"></div>
+                </div>
+
+                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                    حفظ الإعدادات
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Initialize map
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 21.4225, lng: 39.8262 },
+                zoom: 12,
+            });
+
+            // Add markers for important locations
+            const locations = [
+                { lat: 21.4225, lng: 39.8262, title: "المسجد الحرام" },
+                { lat: 21.3891, lng: 39.8579, title: "مطار الملك عبدالعزيز الدولي" }
+            ];
+
+            locations.forEach(location => {
+                new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.title
+                });
+            });
+        }
+
+        // Call initMap when the page loads
+        window.onload = initMap;
+    </script>
+</body>
+</html> 

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الحج - إدارة وتنظيم رحلات الحج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="font-arabic bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-green-600">
+                    <a href="index.html" class="flex items-center">
+                        <img src="https://placehold.co/50x50/16a34a/ffffff?text=HM" alt="نظام الحج" class="h-[50px] w-[50px] mx-auto">
+                        نظام الحج
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 space-x-reverse">
+                    <a href="#features" class="text-gray-600 hover:text-green-600">المميزات</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600">الخدمات</a>
+                    <a href="#dashboard" class="text-gray-600 hover:text-green-600">لوحة التحكم</a>
+                </div>
+                
+                <!-- Login Button -->
+                <a href="login.html" class="hidden md:block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                    تسجيل الدخول
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-white to-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full lg:w-1/2 text-center lg:text-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        نظام متكامل لإدارة رحلات الحج
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        منصة موحدة لإدارة وتنظيم رحلات الحج بكفاءة عالية، تربط بين المطارات ومراكز التوجيه ومكاتب الحج
+                    </p>
+                    <a href="login.html" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-xl hover:bg-green-700 transition-colors">
+                        ابدأ الآن
+                    </a>
+                </div>
+                <div class="w-full lg:w-1/2 mt-12 lg:mt-0">
+                    <img src="https://img.freepik.com/free-vector/referral-marketing-concept-illustration_114360-7129.jpg" alt="Hero Image" class="mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">مميزات النظام</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-plane-arrival text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">إدارة الرحلات</h3>
+                    <p class="text-gray-600">متابعة وصول وتوزيع الحجاج بشكل فعال</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-users text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">التفويج الذكي</h3>
+                    <p class="text-gray-600">توزيع الحجاج على المساكن والحافلات بكفاءة</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-chart-line text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">تقارير مفصلة</h3>
+                    <p class="text-gray-600">إحصائيات وتقارير شاملة لجميع العمليات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">خدماتنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <i class="fas fa-passport text-3xl text-green-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">إدارة الجوازات</h3>
+                        <p class="text-gray-600">متابعة وتنظيم جوازات الحجاج</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <i class="fas fa-building text-3xl text-green-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">إدارة المكاتب</h3>
+                        <p class="text-gray-600">تنظيم مكاتب الحج</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <i class="fas fa-bus text-3xl text-green-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">إدارة النقل</h3>
+                        <p class="text-gray-600">تنظيم رحلات نقل الحجاج</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <i class="fas fa-bell text-3xl text-green-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">نظام الإشعارات</h3>
+                        <p class="text-gray-600">إشعارات فورية لجميع العمليات</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Main Navigation -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">الصفحات الرئيسية</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-500">الرئيسية</a></li>
+                        <li><a href="login.html" class="hover:text-green-500">تسجيل الدخول</a></li>
+                        <li><a href="hajj-dashboard.html" class="hover:text-green-500">لوحة التحكم</a></li>
+                        <li><a href="settings.html" class="hover:text-green-500">الإعدادات</a></li>
+                    </ul>
+                </div>
+    
+                <!-- User Dashboards -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">لوحات التحكم</h3>
+                    <ul class="space-y-2">
+                        <li><a href="admin-dashboard.html" class="hover:text-green-500">لوحة المدير</a></li>
+                        <li><a href="office-dashboard.html" class="hover:text-green-500">لوحة المكتب</a></li>
+                        <li><a href="airport-supervisor.html" class="hover:text-green-500">مشرف المطار</a></li>
+                        <li><a href="city-guidance-dashboard.html" class="hover:text-green-500">مركز التوجيه</a></li>
+                        <li><a href="company-dashboard.html" class="hover:text-green-500">لوحة الشركة</a></li>
+                    </ul>
+                </div>
+    
+                <!-- System Features -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">خدمات النظام</h3>
+                    <ul class="space-y-2">
+                        <li><a href="tafweej.html" class="hover:text-green-500">التفويج</a></li>
+                        <li><a href="passport-management.html" class="hover:text-green-500">إدارة الجوازات</a></li>
+                        <li><a href="reports.html" class="hover:text-green-500">التقارير</a></li>
+                        <li><a href="admin/super-admin-dashboard.html" class="hover:text-green-500">إدارة النظام</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                    <div class="space-y-2">
+                        <p><i class="fas fa-envelope ml-2"></i> info@hajjsystem.com</p>
+                        <p><i class="fas fa-phone ml-2"></i> +966 50 000 0000</p>
+                        <div class="flex space-x-4 space-x-reverse mt-4">
+                            <a href="#" class="text-2xl hover:text-green-500"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-2xl hover:text-green-500"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-2xl hover:text-green-500"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>© 2024 نظام الحج. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

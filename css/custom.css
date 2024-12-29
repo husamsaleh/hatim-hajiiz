@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* RTL specific fixes */
+.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+}
+
+/* Fix sidebar transition */
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Fix table alignment */
+.text-right {
+    text-align: right;
+}
+
+/* Fix input padding for RTL */
+.rtl-input {
+    padding-right: 2.5rem;
+    padding-left: 1rem;
+}
+
+/* Fix mobile menu transition */
+.mobile-menu-transition {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Toast notification RTL position */
+#toast {
+    left: 1rem;
+    right: auto;
+}
+
+/* Custom scrollbar for RTL */
+.custom-scrollbar {
+    direction: rtl;
+}
+
+/* Fix flex gap for RTL */
+.flex.gap-2, .flex.gap-3, .flex.gap-4 {
+    direction: rtl;
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.hover\:bg-primary-dark:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Passport upload zone hover effect */
+.hajj-passport-upload .border-dashed:hover {
+    border-color: var(--primary-color);
+}
+
+/* Passport table specific styles */
+.hajj-passport-table img {
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+}
+
+.hajj-passport-table img:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+/* Enhanced passport table styles */
+.hajj-passport-table {
+    position: relative;
+}
+
+.hajj-passport-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.hajj-passport-table tbody tr:hover {
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.hajj-passport-table img {
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hajj-passport-table img:hover {
+    transform: scale(2);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+/* Enhanced passport upload zone styles */
+.hajj-passport-upload .border-dashed {
+    transition: all 0.3s ease;
+}
+
+.hajj-passport-upload .border-dashed:hover {
+    border-color: var(--primary-color);
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Button hover effects */
+button {
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+/* Table action buttons */
+.hajj-passport-table button {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.hajj-passport-table button:hover {
+    background-color: #f1f5f9;
+}
+
+/* Toast animation enhancement */
+#toast {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Tafweej form specific styles */
+.hajj-tafweej-form input:focus {
+    border-color: var(--primary-color);
+}
+
+/* Tafweej modal styles */
+.hajj-tafweej-modal {
+    z-index: 50;
+}
+
+/* Tafweej table specific styles */
+.hajj-tafweej-table .status-badge {
+    transition: all 0.3s ease;
+}
+
+.hajj-tafweej-table .status-badge:hover {
+    transform: translateY(-1px);
+}
+
+/* Flight tracking specific styles */
+.hajj-flight-table img {
+    object-fit: contain;
+}
+
+.hajj-flight-modal {
+    z-index: 50;
+}
+
+.hajj-flight-status {
+    transition: all 0.3s ease;
+}
+
+.hajj-flight-status:hover {
+    transform: translateY(-1px);
+}
+
+/* Office dashboard specific styles */
+.hajj-office-notifications .notification-item {
+    transition: all 0.3s ease;
+}
+
+.hajj-office-notifications .notification-item:hover {
+    transform: translateY(-1px);
+}
+
+.hajj-office-trips .status-badge {
+    transition: all 0.2s ease;
+}
+
+.hajj-office-notifications-panel {
+    z-index: 40;
+}
+
+.hajj-office-passports .passport-row:hover {
+    background-color: rgba(243, 244, 246, 0.8);
+}
+
+/* City guidance center specific styles */
+.hajj-guidance-housing input:focus {
+    border-color: var(--primary-color);
+}
+
+.hajj-guidance-drivers .driver-row {
+    transition: all 0.2s ease;
+}
+
+.hajj-guidance-map {
+    border: 1px solid #e5e7eb;
+}
+
+.hajj-guidance-modal {
+    z-index: 50;
+}
+
+/* Status badge animations */
+.hajj-guidance-drivers .status-badge {
+    transition: all 0.3s ease;
+}
+
+.hajj-guidance-drivers .status-badge:hover {
+    transform: translateY(-1px);
+}
+
+/* Airport supervisor specific styles */
+.hajj-airport-flights .airline-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.hajj-airport-reception input:focus {
+    border-color: var(--primary-color);
+}
+
+.hajj-airport-processing .progress-bar {
+    transition: width 0.3s ease;
+}
+
+.hajj-airport-modal {
+    z-index: 50;
+}
+
+/* Status indicators */
+.hajj-airport-status {
+    transition: all 0.3s ease;
+}
+
+.hajj-airport-status:hover {
+    transform: translateY(-1px);
+}
+
+/* Login page specific styles */
+.hajj-login-form input:focus,
+.hajj-login-form select:focus {
+    border-color: var(--primary-color);
+}
+
+.hajj-login-form input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.hajj-login-toast {
+    z-index: 50;
+}
+
+/* Custom checkbox styles */
+.hajj-login-form input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Form input icons */
+.hajj-login-form .input-icon {
+    color: #9CA3AF;
+}
+
+/* Settings page specific styles */
+.hajj-settings-form input:focus,
+.hajj-settings-form select:focus {
+    border-color: var(--primary-color);
+}
+
+/* Toggle switch animations */
+.hajj-settings-form .toggle-switch {
+    transition: background-color 0.3s ease;
+}
+
+.hajj-settings-form .toggle-switch::after {
+    transition: transform 0.3s ease;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+    .statistics-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Loading animations */
+.loading-placeholder {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Smooth transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Better mobile responsiveness */
+@media (max-width: 640px) {
+    .statistics-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .main-content {
+        margin-right: 0 !important;
+        padding: 1rem;
+    }
+    
+    #sidebar {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Skeleton loading animation */
+.skeleton-loader {
+    background: linear-gradient(
+        90deg,
+        rgba(226, 232, 240, 0.6) 25%,
+        rgba(226, 232, 240, 0.9) 50%,
+        rgba(226, 232, 240, 0.6) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Improved focus states */
+button:focus, a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Better table responsiveness */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+}
+
+/* Improved card hover states */
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+} 

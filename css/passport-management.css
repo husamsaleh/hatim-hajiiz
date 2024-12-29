@@ -1,0 +1,55 @@
+/* Enhanced passport table styles */
+.hajj-passport-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.hajj-passport-table tbody tr:hover {
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Image preview enhancements */
+#imagePreview img {
+    transition: transform 0.3s ease;
+}
+
+#imagePreview img:hover {
+    transform: scale(1.1);
+}
+
+/* Form validation styles */
+.form-error {
+    border-color: #ef4444;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Modal animation */
+#passportDetailsModal {
+    transition: opacity 0.3s ease;
+}
+
+#passportDetailsModal .modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+#passportDetailsModal:not(.hidden) .modal-content {
+    transform: scale(1);
+}
+
+/* Modal photo styles */
+#modal-pilgrim-photo {
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+#modal-pilgrim-photo:hover {
+    border-color: #10b981;
+    transform: scale(1.05);
+} 

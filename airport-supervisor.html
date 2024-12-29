@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسؤول المطار - نظام الحج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform bg-white border-l border-gray-200 sm:translate-x-0">
+        <div class="h-full px-3 py-4 overflow-y-auto">
+            <div class="mb-8 px-2">
+                <div class="flex items-center mb-4">
+                    <img src="https://placehold.co/50x50/16a34a/ffffff?text=HM" alt="نظام الحج" class="h-[50px] w-[50px] ml-2">
+                    <div>
+                        <span class="text-xl font-bold text-green-600 block">مطار الملك عبدالعزيز</span>
+                        <span class="text-sm text-gray-500">صالة الحجاج</span>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="space-y-2">
+                <li>
+                    <a href="#arrivals" class="flex items-center p-2 text-gray-900 rounded-lg group active bg-gray-100">
+                        <i class="fas fa-plane-arrival w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">القادمون</span>
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-4 sm:mr-64">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold mb-2">لوحة تحكم المطار</h1>
+            <div class="flex items-center text-gray-600">
+                <i class="fas fa-clock ml-2"></i>
+                <span id="currentTime">14:30 - 15 رمضان 1445</span>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-plane text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">رحلات اليوم</p>
+                        <h3 class="text-xl font-bold">24</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">الحجاج المتوقعين</p>
+                        <h3 class="text-xl font-bold">3,450</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">تحت الإجراء</p>
+                        <h3 class="text-xl font-bold">856</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                        <i class="fas fa-bus text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">حافلات جاهزة</p>
+                        <h3 class="text-xl font-bold">42</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search, Filters, and Upcoming Flights -->
+        <div class="bg-white rounded-lg shadow-sm mb-8">
+            <div class="p-6 border-b border-gray-200">
+                <!-- Search and Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">بحث عن رحلة</label>
+                        <input type="text" placeholder="رقم الرحلة..." class="w-full border rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">شركة الطيران</label>
+                        <select class="w-full border rounded-lg px-3 py-2">
+                            <option value="">الكل</option>
+                            <option>الخطوط السعودية</option>
+                            <option>طيران الإمارات</option>
+                            <option>الخطوط التركية</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">تاريخ الوصول</label>
+                        <input type="date" class="w-full border rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">الحالة</label>
+                        <select class="w-full border rounded-lg px-3 py-2">
+                            <option value="">الكل</option>
+                            <option>في الموعد</option>
+                            <option>متأخرة</option>
+                            <option>تم الوصول</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-2 mb-6">
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+                        إعادة تعيين
+                    </button>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                        بحث
+                    </button>
+                </div>
+
+                <!-- Upcoming Flights Section -->
+                <h2 class="text-xl font-bold">الرحلات القادمة</h2>
+            </div>
+            <div class="overflow-x-auto hajj-airport-flights">
+                <table class="w-full text-sm text-right">
+                    <thead class="bg-gray-50 text-gray-600 font-medium border-b">
+                        <tr>
+                            <th class="px-6 py-3">رقم الرحلة</th>
+                            <th class="px-6 py-3">شركة الطيران</th>
+                            <th class="px-6 py-3">القادمة من</th>
+                            <th class="px-6 py-3">تاريخ الوصول</th>
+                            <th class="px-6 py-3">موعد الوصول</th>
+                            <th class="px-6 py-3">عدد الحجاج</th>
+                            <th class="px-6 py-3">الحالة</th>
+                            <th class="px-6 py-3">الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">SV3421</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Saudia_Logo.svg/120px-Saudia_Logo.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    الخطوط السعودية
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">كوالالمبور</td>
+                            <td class="px-6 py-4">2024-03-20</td>
+                            <td class="px-6 py-4">15:45</td>
+                            <td class="px-6 py-4">285</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">في الموعد</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="bg-blue-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-blue-700">
+                                    تسجيل الوصول
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">EK2301</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/120px-Emirates_logo.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    طيران الإمارات
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">جاكرتا</td>
+                            <td class="px-6 py-4">2024-03-20</td>
+                            <td class="px-6 py-4">16:30</td>
+                            <td class="px-6 py-4">320</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">متأخرة</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="bg-blue-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-blue-700">
+                                    تسجيل الوصول
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">TK5642</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Turkish_Airlines_logo_2019.svg/120px-Turkish_Airlines_logo_2019.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    الخطوط التركية
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">اسطنبول</td>
+                            <td class="px-6 py-4">2024-03-20</td>
+                            <td class="px-6 py-4">17:15</td>
+                            <td class="px-6 py-4">265</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">في الموعد</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="bg-blue-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-blue-700">
+                                    تسجيل الوصول
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">MS8821</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/EgyptAir_logo.svg/120px-EgyptAir_logo.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    مصر للطيران
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">القاهرة</td>
+                            <td class="px-6 py-4">2024-03-20</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">290</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">في الموعد</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="bg-blue-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-blue-700">
+                                    تسجيل الوصول
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Past Flights Filter and Table -->
+        <div class="bg-white rounded-lg shadow-sm mb-8">
+            <div class="p-6 border-b border-gray-200">
+                <h2 class="text-xl font-bold mb-4">الرحلات السابقة</h2>
+                
+                <!-- Past Flights Filter -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">من تاريخ</label>
+                        <input type="date" class="w-full border rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">إلى تاريخ</label>
+                        <input type="date" class="w-full border rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">حالة المعالجة</label>
+                        <select class="w-full border rounded-lg px-3 py-2">
+                            <option value="">الكل</option>
+                            <option>تمت المعالجة</option>
+                            <option>معالجة جزئية</option>
+                            <option>لم تتم المعالجة</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Past Flights Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-right">
+                    <thead class="bg-gray-50 text-gray-600 font-medium border-b">
+                        <tr>
+                            <th class="px-6 py-3">رقم الرحلة</th>
+                            <th class="px-6 py-3">شركة الطيران</th>
+                            <th class="px-6 py-3">تاريخ الوصول</th>
+                            <th class="px-6 py-3">وقت الوصول</th>
+                            <th class="px-6 py-3">عدد الحجاج</th>
+                            <th class="px-6 py-3">تمت المعالجة</th>
+                            <th class="px-6 py-3">وقت المعالجة</th>
+                            <th class="px-6 py-3">التفاصيل</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">SV3420</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Saudia_Logo.svg/120px-Saudia_Logo.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    الخطوط السعودية
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">2024-03-19</td>
+                            <td class="px-6 py-4">13:30</td>
+                            <td class="px-6 py-4">245</td>
+                            <td class="px-6 py-4">245</td>
+                            <td class="px-6 py-4">120 دقيقة</td>
+                            <td class="px-6 py-4">
+                                <button class="bg-gray-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-gray-700">
+                                    عرض التفاصيل
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">EK2300</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/120px-Emirates_logo.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    طيران الإمارات
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">2024-03-19</td>
+                            <td class="px-6 py-4">12:15</td>
+                            <td class="px-6 py-4">310</td>
+                            <td class="px-6 py-4">310</td>
+                            <td class="px-6 py-4">135 دقيقة</td>
+                            <td class="px-6 py-4">
+                                <button class="bg-gray-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-gray-700">
+                                    عرض التفاصيل
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">TK5641</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Turkish_Airlines_logo_2019.svg/120px-Turkish_Airlines_logo_2019.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    الخطوط التركية
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">2024-03-19</td>
+                            <td class="px-6 py-4">11:45</td>
+                            <td class="px-6 py-4">275</td>
+                            <td class="px-6 py-4">275</td>
+                            <td class="px-6 py-4">110 دقيقة</td>
+                            <td class="px-6 py-4">
+                                <button class="bg-gray-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-gray-700">
+                                    عرض التفاصيل
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">MS8820</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/EgyptAir_logo.svg/120px-EgyptAir_logo.svg.png" alt="Airline" class="h-6 w-6 ml-2">
+                                    مصر للطيران
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">2024-03-19</td>
+                            <td class="px-6 py-4">10:30</td>
+                            <td class="px-6 py-4">255</td>
+                            <td class="px-6 py-4">255</td>
+                            <td class="px-6 py-4">125 دقيقة</td>
+                            <td class="px-6 py-4">
+                                <button class="bg-gray-600 text-white px-4 py-1 rounded-lg text-xs hover:bg-gray-700">
+                                    عرض التفاصيل
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Reception Processing -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- Reception Form -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-bold mb-6">تسجيل استقبال</h2>
+                <form class="hajj-airport-reception space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">رقم المكتب / اسم المكتب</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">رقم الحافلة</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">رقم الرحلة</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">عدد الحجاج</label>
+                        <input type="number" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">معلومات السائق</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="الاسم" class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <input type="tel" placeholder="رقم الهاتف" class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">عنوان السكن</label>
+                        <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">المسار</label>
+                        <select class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option>جدة - مدينة</option>
+                            <option>جدة - مكة</option>
+                            <option>مدينة - مكة</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">وقت الترحيل</label>
+                        <input type="datetime-local" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                        تسجيل الاستقبال
+                    </button>
+                </form>
+            </div>
+
+            <!-- Active Processing -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-bold mb-6">الإجراءات لنشطة</h2>
+                <div class="hajj-airport-processing space-y-4">
+                    <div class="p-4 border rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold">رحلة SV3421</span>
+                            <span class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">جاري المعالجة</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                            <div>
+                                <p>عدد الحجاج: 285</p>
+                                <p>تم معالجة: 145</p>
+                            </div>
+                            <div>
+                                <p>الوقت المنقضي: 45 دقيقة</p>
+                                <p>الحافلات المخصصة: 6</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 51%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Processing Modal -->
+    <div id="processingModal" class="hajj-airport-modal hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3">
+                <h3 class="text-lg font-bold mb-4">تفاصيل المعالجة</h3>
+                <div class="space-y-4">
+                    <!-- Modal content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 left-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+        تم تسجيل الاستقبال بنجاح!
+    </div>
+</body>
+</html>

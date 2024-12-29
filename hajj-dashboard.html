@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة الحج - لوحة التحكم</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform bg-white border-l border-gray-200 sm:translate-x-0">
+        <div class="h-full px-3 py-4 overflow-y-auto">
+            <div class="mb-8 px-2">
+                <a href="index.html" class="flex items-center">
+                    <img src="https://placehold.co/50x50/16a34a/ffffff?text=HM" alt="نظام الحج" class="h-[50px] w-[50px] mx-auto">
+
+                    <span class="text-2xl font-bold text-green-600">نظام الحج</span>
+                </a>
+            </div>
+            
+            <ul class="space-y-2">
+                <li>
+                    <a href="hajj-dashboard.html" class="flex items-center p-2 text-gray-900 rounded-lg group active bg-gray-100">
+                        <i class="fas fa-plane-arrival w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الاستقبال</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tafweej.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-users w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">التفويج</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="passport-management.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-passport w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الجوازات</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-4 sm:mr-64">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold mb-2">نظام استقبال الحجاج</h1>
+            <p class="text-gray-600">إدارة وتتبع رحلات الحجاج</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <i class="fas fa-bus text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">الرحلات النشطة</p>
+                        <h3 class="text-xl font-bold">24</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">إجمالي الحجاج اليوم</p>
+                        <h3 class="text-xl font-bold">1,234</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">رحلات قيد الانتظار</p>
+                        <h3 class="text-xl font-bold">8</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <div class="mr-4">
+                        <p class="text-sm text-gray-500">رحلات مكتملة</p>
+                        <h3 class="text-xl font-bold">16</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reception Form -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">إضافة رحلة جديدة</h2>
+            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم الحافلة</label>
+                    <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم الرحلة</label>
+                    <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">عدد الحجاج</label>
+                    <input type="number" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">اسم السائق</label>
+                    <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم هاتف السائق</label>
+                    <input type="tel" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">رقم المكتب</label>
+                    <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">المسار</label>
+                    <select class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="jeddah-madinah">جدة - المدينة</option>
+                        <option value="jeddah-makkah">جدة - مكة</option>
+                        <option value="madinah-makkah">المدينة - مكة</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">حالة الرحلة</label>
+                    <select class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="not-arrived">لم تصل بعد</option>
+                        <option value="arrived">تم الوصول</option>
+                        <option value="in-progress">تحت الإجراء</option>
+                        <option value="departed">تمت المغادرة</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">الجنسية</label>
+                    <input type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">وقت الترحيل</label>
+                    <input type="datetime-local" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">الوقت المتوقع للوصول</label>
+                    <input type="datetime-local" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+
+                <div class="md:col-span-2 lg:col-span-3">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">عنوان السكن</label>
+                    <textarea class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" rows="2"></textarea>
+                </div>
+
+                <div class="md:col-span-2 lg:col-span-3">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">ملاحظات</label>
+                    <textarea class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" rows="2"></textarea>
+                </div>
+
+                <div class="md:col-span-2 lg:col-span-3">
+                    <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                        <i class="fas fa-save ml-2"></i>
+                        حفظ الرحلة
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Active Trips Table -->
+        <div class="bg-white rounded-lg shadow-sm">
+            <div class="p-6 border-b border-gray-200">
+                <h2 class="text-xl font-bold">الرحلات النشطة</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-right">
+                    <thead class="bg-gray-50 text-gray-600 font-medium border-b">
+                        <tr>
+                            <th class="px-6 py-3">رقم الرحلة</th>
+                            <th class="px-6 py-3">رقم الحافلة</th>
+                            <th class="px-6 py-3">عدد الحجاج</th>
+                            <th class="px-6 py-3">المسار</th>
+                            <th class="px-6 py-3">السائق</th>
+                            <th class="px-6 py-3">الحالة</th>
+                            <th class="px-6 py-3">وقت المغادرة</th>
+                            <th class="px-6 py-3">الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <!-- Sample row -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">FL001</td>
+                            <td class="px-6 py-4">BUS123</td>
+                            <td class="px-6 py-4">45</td>
+                            <td class="px-6 py-4">جدة - المدينة</td>
+                            <td class="px-6 py-4">محمد أحمد</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">تحت الإجراء</span>
+                            </td>
+                            <td class="px-6 py-4">14:30</td>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
+                                    <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit"></i></button>
+                                    <button class="text-green-600 hover:text-green-800"><i class="fas fa-phone"></i></button>
+                                    <button class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 left-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+        تم حفظ البيانات بنجاح!
+    </div>
+</body>
+</html> 

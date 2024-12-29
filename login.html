@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - نظام الحج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div class="text-center">
+                <img src="https://placehold.co/50x50/16a34a/ffffff?text=HM" alt="نظام الحج" class="h-[50px] w-[50px] mx-auto">
+                <h2 class="mt-6 text-3xl font-bold text-gray-900">
+                    نظام إدارة الحج
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    الرجاء تسجيل الدخ��ل للوصول إلى لوحة التحكم
+                </p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <form class="hajj-login-form space-y-6" action="#" method="POST">
+                    <!-- User Type Selection -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">نوع المستخدم</label>
+                        <select class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">اختر نوع المستخدم</option>
+                            <option value="airport">مسؤول المطار</option>
+                            <option value="guidance">مركز التوجيه</option>
+                            <option value="office">مكتب حج</option>
+                            <option value="admin">مدير النظام</option>
+                        </select>
+                    </div>
+
+                    <!-- Username -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">اسم المستخدم</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-gray-400"></i>
+                            </div>
+                            <input type="text" class="w-full border rounded-lg pr-10 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="أدخل اسم المستخدم">
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">كلمة المرور</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input type="password" class="w-full border rounded-lg pr-10 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="أدخل كلمة المرور">
+                        </div>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                            <label class="mr-2 block text-sm text-gray-900">
+                                تذكرني
+                            </label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-green-600 hover:text-green-500">
+                                نسيت كلمة المرور؟
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                            تسجيل الدخول
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Help Text -->
+            <div class="text-center text-sm text-gray-600">
+                <p>هل تواجه مشكلة في تسجيل الدخول؟</p>
+                <a href="#" class="font-medium text-green-600 hover:text-green-500">
+                    تواصل مع الدعم الفني
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="errorToast" class="hajj-login-toast fixed bottom-4 left-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+        خطأ في تسجيل الدخول. الرجاء التحقق من البيانات المدخلة.
+    </div>
+</body>
+</html> 
