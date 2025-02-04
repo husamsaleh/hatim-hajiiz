@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرحلات السابقة - نظام الحج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="sm:hidden fixed top-4 right-4 z-50 bg-white p-2 rounded-lg shadow-lg">
+        <i class="fas fa-bars text-gray-600"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform bg-white border-l border-gray-200 transform translate-x-full sm:translate-x-0">
+        <div class="h-full px-3 py-4 overflow-y-auto">
+            <div class="mb-8 px-2">
+                <div class="flex items-center mb-4">
+                    <img src="images/logo.png" alt="نظام الحج" class="h-[50px] w-[50px] ml-2">
+                    <div>
+                        <span class="text-xl font-bold text-green-600 block">مركز 123</span>
+                        <span class="text-sm text-gray-500">رقم المكتب: OFF123</span>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="space-y-2">
+                <li>
+                    <a href="office-dashboard.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-chart-pie w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">نظرة عامة</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="office-todays-trips.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-bus w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الرحلات اليوم</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="office-past-trips.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-history w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الرحلات السابقة</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="office-upcoming-trips.html" class="flex items-center p-2 text-gray-900 rounded-lg group active bg-gray-100">
+                        <i class="fas fa-bus w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الرحلات القادمة</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-4 sm:mr-64">
+        <div class="mb-8 mt-12 sm:mt-0">
+            <div class="flex gap-4 items-center mb-4">
+                <a href="office-todays-trips.html" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                    <i class="fas fa-bus ml-2"></i>رحلات اليوم
+                </a> 
+                <a href="office-past-trips.html" class="bg-green-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                    <i class="fas fa-history ml-2"></i>الرحلات السابقة
+                </a>
+               
+                <a href="office-upcoming-trips.html" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                    <i class="fas fa-bus ml-2"></i>الرحلات القادمة
+                </a>
+            </div>
+            <div class="flex gap-4 items-center">
+                <h1 class="text-2xl font-bold mb-2">الرحلات السابقة</h1>
+               
+            </div>
+            <p class="text-gray-600">عرض جميع الرحلات السابقة للمكتب</p>
+        </div>
+
+        <!-- Past Trips Table -->
+        <div class="overflow-x-auto">
+            <div class="bg-white rounded-lg shadow-sm mb-8 min-w-[768px]">
+                <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                    <h2 class="text-xl font-bold">سجل الرحلات</h2>
+                    <div class="flex gap-4">
+                        <input type="date" class="border rounded-lg px-3 py-2 text-sm" placeholder="تاريخ البداية">
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                            <i class="fas fa-search ml-2"></i>بحث
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-right">
+                        <thead class="bg-gray-50 text-gray-600 font-medium border-b">
+                            <tr>
+                                <th class="px-6 py-3">رقم الرحلة</th>
+                                <th class="px-6 py-3">عدد الحجاج</th>
+                                <th class="px-6 py-3">التاريخ</th>
+                                <th class="px-6 py-3">الوقت</th>
+                                <th class="px-6 py-3">المسار</th>
+                                <th class="px-6 py-3">الحالة</th>
+                                <th class="px-6 py-3">الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">FL456</td>
+                                <td class="px-6 py-4">120</td>
+                                <td class="px-6 py-4">2024-03-18</td>
+                                <td class="px-6 py-4">16:45</td>
+                                <td class="px-6 py-4">جدة - مكة</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">مكتمل</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800" title="تفاصيل">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-800" title="تحميل التقرير">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">FL123</td>
+                                <td class="px-6 py-4">85</td>
+                                <td class="px-6 py-4">2024-03-17</td>
+                                <td class="px-6 py-4">09:30</td>
+                                <td class="px-6 py-4">المدينة - مكة</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">مكتمل</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-2">
+                                        <button class="text-blue-600 hover:text-blue-800" title="تفاصيل">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-800" title="تحميل التقرير">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 border-t border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-600">
+                            عرض 1-2 من 2 رحلات
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="px-3 py-1 border rounded-lg text-sm text-gray-600 hover:bg-gray-50 disabled:opacity-50" disabled>
+                                السابق
+                            </button>
+                            <button class="px-3 py-1 border rounded-lg text-sm text-gray-600 hover:bg-gray-50 disabled:opacity-50" disabled>
+                                التالي
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('translate-x-full');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.getElementById('mobile-menu-button');
+            
+            if (window.innerWidth < 640 && // sm breakpoint
+                !sidebar.contains(event.target) && 
+                !menuButton.contains(event.target) &&
+                !sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.add('translate-x-full');
+            }
+        });
+    </script>
+</body>
+</html>
