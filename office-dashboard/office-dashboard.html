@@ -24,8 +24,13 @@
     <aside id="sidebar" class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform bg-white border-l border-gray-200 transform translate-x-full sm:translate-x-0">
         <div class="h-full px-3 py-4 overflow-y-auto">
             <div class="mb-8 px-2">
+                <a href="/" class="flex items-center">
+                    <img src="https://placehold.co/50x50/16a34a/ffffff?text=HM" alt="نظام الحج" class="h-[50px] w-[50px] ml-2">
+                    <span class="text-2xl font-bold text-green-600">نظام الحج</span>
+                </a>
+            </div>
+            <div class="mb-8 px-2">
                 <div class="flex items-center mb-4">
-                    <img src="images/logo.png" alt="نظام الحج" class="h-[50px] w-[50px] ml-2">
                     <div>
                         <span class="text-xl font-bold text-green-600 block">مركز 123</span>
                         <span class="text-sm text-gray-500">رقم المكتب: OFF123</span>
@@ -41,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#pilgrims" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                    <a href="haji-people-office.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                         <i class="fas fa-users w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
                         <span class="mr-3">الحجاج</span>
                     </a>
@@ -64,6 +69,12 @@
                     <a href="office-add-housing.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                         <i class="fas fa-building w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
                         <span class="mr-3">إضافة السكن</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tafweej.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-users w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">التفويج</span>
                     </a>
                 </li>
             </ul>
@@ -312,9 +323,9 @@
                     <table class="w-full text-sm text-right">
                         <thead class="bg-gray-50 text-gray-600 font-medium border-b">
                             <tr>
-                                <th class="px-6 py-3">اسم الحاج</th>
+                               
                                 <th class="px-6 py-3">الجنسيات</th>
-                                <th class="px-6 py-3">رقم الجواز</th>
+                                <th class="px-6 py-3">العدد</th>
                                 <th class="px-6 py-3">السكن المخصص</th>
                                 <th class="px-6 py-3">رقم الرحلة</th>
                                 <th class="px-6 py-3">الحالة</th>
@@ -322,14 +333,13 @@
                         </thead>
                         <tbody class="divide-y divide-gray-200">
                             <tr class="hover:bg-gray-50">
-                                <td class="px-6 py-4">محمد أحمد</td>
+                               
                                 <td class="px-6 py-4">
                                     <div class="flex gap-1">
                                         <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">مصري</span>
-                                        <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">كندي</span>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4">A123456789</td>
+                                <td class="px-6 py-4">10</td>
                                 <td class="px-6 py-4">فندق النور</td>
                                 <td class="px-6 py-4">FL789</td>
                                 <td class="px-6 py-4">
@@ -342,38 +352,7 @@
             </div>
         </div>
 
-        <!-- Pending Passports -->
-        <div class="overflow-x-auto">
-            <div class="bg-white rounded-lg shadow-sm min-w-[768px]">
-                <div class="p-6 border-b border-gray-200">
-                    <h2 class="text-xl font-bold">الجوازات المعلقة</h2>
-                </div>
-                <div class="overflow-x-auto hajj-office-passports">
-                    <table class="w-full text-sm text-right">
-                        <thead class="bg-gray-50 text-gray-600 font-medium border-b">
-                            <tr>
-                                <th class="px-6 py-3">رقم الجواز</th>
-                                <th class="px-6 py-3">اسم الحاج</th>
-                                <th class="px-6 py-3">الجنسية</th>
-                                <th class="px-6 py-3">رقم الرحلة</th>
-                                <th class="px-6 py-3">الحالة</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="hover:bg-gray-50">
-                                <td class="px-6 py-4">A123456789</td>
-                                <td class="px-6 py-4">محمد أحمد</td>
-                                <td class="px-6 py-4">مصري</td>
-                                <td class="px-6 py-4">FL789</td>
-                                <td class="px-6 py-4">
-                                    <span class="px-3 py-1 rounded-full text-xs bg-red-100 text-red-800">معلق</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+       
 
         <!-- Toast Notification -->
         <div id="toast" class="fixed bottom-4 left-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">

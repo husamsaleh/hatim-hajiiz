@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحجاج - نظام الحج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="sm:hidden fixed top-4 right-4 z-50 bg-white p-2 rounded-lg shadow-lg">
+        <i class="fas fa-bars text-gray-600"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform bg-white border-l border-gray-200 transform translate-x-full sm:translate-x-0">
+        <div class="h-full px-3 py-4 overflow-y-auto">
+            <div class="mb-8 px-2">
+                <a href="/" class="flex items-center">
+                    <img src="https://placehold.co/50x50/16a34a/ffffff?text=HM" alt="نظام الحج" class="h-[50px] w-[50px] ml-2">
+                    <span class="text-2xl font-bold text-green-600">نظام الحج</span>
+                </a>
+            </div>
+            <div class="mb-8 px-2">
+                <div class="flex items-center mb-4">
+                    <div>
+                        <span class="text-xl font-bold text-green-600 block">مركز 123</span>
+                        <span class="text-sm text-gray-500">رقم المكتب: OFF123</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="space-y-2">
+                <li>
+                    <a href="office-dashboard.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-chart-pie w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">نظرة عامة</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#pilgrims" class="flex items-center p-2 text-gray-900 rounded-lg group active bg-gray-100">
+                        <i class="fas fa-users w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الحجاج</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="office-past-trips.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-bus w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الرحلات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#notifications" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-bell w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">الإشعارات</span>
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full mr-auto">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="office-add-housing.html" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                        <i class="fas fa-building w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"></i>
+                        <span class="mr-3">إضافة السكن</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="p-4 sm:mr-64">
+        <!-- Header with Office Info -->
+        <div class="mb-8 mt-12 sm:mt-0">
+            <h1 class="text-2xl font-bold mb-2">الحجاج</h1>
+            <div class="flex items-center text-gray-600">
+                <i class="fas fa-user-circle ml-2"></i>
+                <span>مرحباً، أحمد محمد</span>
+            </div>
+        </div>
+
+        <!-- Pilgrims Section -->
+        <div class="overflow-x-auto">
+            <div class="bg-white rounded-lg shadow-sm mb-8 min-w-[768px]">
+                <div class="p-6 border-b border-gray-200">
+                    <h2 class="text-xl font-bold">الحجاج</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-right">
+                        <thead class="bg-gray-50 text-gray-600 font-medium border-b">
+                            <tr>
+                                <th class="px-6 py-3">الجنسيات</th>
+                                <th class="px-6 py-3">العدد</th>
+                                <th class="px-6 py-3">السكن المخصص</th>
+                                <th class="px-6 py-3">رقم الرحلة</th>
+                                <th class="px-6 py-3">الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">مصري</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">10</td>
+                                <td class="px-6 py-4">فندق النور</td>
+                                <td class="px-6 py-4">FL789</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">تم الاستقبال</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">باكستاني</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">15</td>
+                                <td class="px-6 py-4">فندق الإيمان</td>
+                                <td class="px-6 py-4">FL456</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">قيد المعالجة</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">إندونيسي</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">25</td>
+                                <td class="px-6 py-4">فندق المدينة</td>
+                                <td class="px-6 py-4">FL123</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">تم الاستقبال</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">ماليزي</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">20</td>
+                                <td class="px-6 py-4">فندق السلام</td>
+                                <td class="px-6 py-4">FL789</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-red-100 text-red-800">متأخر</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4">
+                                    <div class="flex gap-1">
+                                        <span class="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">تركي</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">30</td>
+                                <td class="px-6 py-4">فندق الرحمة</td>
+                                <td class="px-6 py-4">FL321</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">قيد المعالجة</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('translate-x-full');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.getElementById('mobile-menu-button');
+            
+            if (window.innerWidth < 640 && 
+                !sidebar.contains(event.target) && 
+                !menuButton.contains(event.target) &&
+                !sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.add('translate-x-full');
+            }
+        });
+    </script>
+</body>
+</html>
